@@ -44,6 +44,16 @@ $(document).ready(function() {
       $("#container-toggle").toggleClass("container");
     }
 
+    if (el === "advanced") {
+      var element_advanced = css_input.slice(0,css_input.indexOf(","));
+      css_input = css_input.slice(css_input.indexOf(",")+1,css_input.length);
+
+      var property_advanced = css_input.slice(0,css_input.indexOf(","));
+
+      var value_advanced = css_input.slice(css_input.indexOf(",")+1,css_input.length);
+
+      $(element_advanced).css(property_advanced, value_advanced);
+    }
     event.preventDefault();
   })
 
